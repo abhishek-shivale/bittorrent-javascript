@@ -8,7 +8,8 @@ function decodeBencode(bencodedValue) {
     if (firstColonIndex === -1) {
       throw new Error("Invalid encoded value");
     }
-    return bencodedValue.substr(firstColonIndex + 1);
+    const returnValue = bencodedValue.substring(firstColonIndex+1,bencodedValue.length)
+    return returnValue
   }else if (bencodedValue[0] === "i" && bencodedValue[bencodedValue.length - 1 ] === "e") {
     const string = bencodedValue.substring(1, bencodedValue.length - 1 )
     const toInt = parseInt(string)
