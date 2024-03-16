@@ -10,7 +10,13 @@ function decodeBencode(bencodedValue) {
     }
     return bencodedValue.substr(firstColonIndex + 1);
   }else if (bencodedValue[0] === "i" && bencodedValue[bencodedValue.length - 1 ] === "e") {
-    return bencodedValue.substring(1, bencodedValue.length - 1 )
+    const string = bencodedValue.substring(1, bencodedValue.length - 1 )
+    const toInt = parseInt(string)
+    if(toInt){
+      return toInt
+    }else{
+      throw new Error("Only Integar are supported at the moment");
+    }
   } else {
     throw new Error("Only strings are supported at the moment");
   }
