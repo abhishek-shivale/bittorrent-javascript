@@ -2,7 +2,6 @@ const process = require("process");
 const util = require("util");
 
 function decodeBencode(bencodedValue) {
-  console.log(bencodedValue)
   if (!isNaN(bencodedValue[0])) {
     const firstColonIndex = bencodedValue.indexOf(":");
     if (firstColonIndex === -1) {
