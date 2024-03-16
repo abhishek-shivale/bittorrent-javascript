@@ -15,7 +15,7 @@ function decodeBencode(bencodedValue) {
     throw new Error("Only strings are supported at the moment");
   }
 }
-//&& 
+
 
 function main() {
   const command = process.argv[2];
